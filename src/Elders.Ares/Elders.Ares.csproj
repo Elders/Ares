@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2DE1FF52-BFD4-411D-89C1-1E02004E9FA7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Elders.Ares</RootNamespace>
+    <AssemblyName>Elders.Ares</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AresMetrics.cs" />
+    <Compile Include="AresMetricsFactory.cs" />
+    <Compile Include="Atomic\AtomicBoolean.cs" />
+    <Compile Include="Atomic\AtomicInteger.cs" />
+    <Compile Include="Atomic\AtomicIntegerArray.cs" />
+    <Compile Include="Atomic\AtomicLong.cs" />
+    <Compile Include="Atomic\AtomicReference.cs" />
+    <Compile Include="Atomic\AtomicReferenceArray.cs" />
+    <Compile Include="CircuitBreaker.cs" />
+    <Compile Include="CircuitBreakerFactory.cs" />
+    <Compile Include="AresExecutor.cs" />
+    <Compile Include="Helpers\WaitTime.cs" />
+    <Compile Include="PropertyFactory.cs" />
+    <Compile Include="ICircuitBreaker.cs" />
+    <Compile Include="IIOperationProperties.cs" />
+    <Compile Include="IProperty.cs" />
+    <Compile Include="MetricNumber.cs" />
+    <Compile Include="IOperation.cs" />
+    <Compile Include="OperationResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Userful\ActualTime.cs" />
+    <Compile Include="Userful\BucketCircularArray.cs" />
+    <Compile Include="Userful\RollingNumber.cs" />
+    <Compile Include="Userful\RollingNumberEvent.cs" />
+    <Compile Include="Userful\RollingNumberEventExtensions.cs" />
+    <Compile Include="Userful\RollingPercentile.cs" />
+    <Compile Include="Userful\ITime.cs" />
+    <Compile Include="Userful\LongAdder.cs" />
+    <Compile Include="Userful\LongMaxUpdater.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
